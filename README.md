@@ -1,184 +1,109 @@
-\# 🚗 Parking Lot Management System
+cat > README.md << 'EOF'
 
+# Parking Lot Management System
 
+**Course:** Object-Oriented Analysis and Design  
+**Assignment:** Final Project (40%)  
+**Submission Deadline:** 16 Feb 2026, 11:59 PM
 
-A comprehensive multi-level parking lot management system built with Java Swing, demonstrating advanced Object-Oriented Analysis and Design principles.
+## Team Information
 
+**Group Name:** [Group 4]  
+**Tutorial Section:** [TT6L]
 
+### Team Members
 
-\## 📋 Project Overview
+1. **[LAMA M. R. SIAM]** - Member 1 (Parking Structure Lead) - Team Leader
+2. **[EBA MOAHMED ABBAD AHMED]** - Member 2 (Vehicle & Entry Lead)
+3. **[HONG JING JIE]** - Member 3 (Exit & Payment Lead)
+4. **[SITI ZULAIKHA BINTI ABDUL RAZIF]** - Member 4 (Fine & Reports Lead)
 
+## Project Description
 
+A Java Swing-based parking lot management system for a multi-level building that handles:
 
-This system manages a multi-level parking facility with support for various vehicle types, dynamic spot allocation, automated billing, and fine management.
+- Vehicle parking and spot allocation
+- Payment processing
+- Fine management
+- Administrative reporting
 
+## How to Compile and Run
 
+### Prerequisites
 
-\## ✨ Features
+- Java JDK 11 or higher
+- SQLite JDBC driver (included in lib/)
 
-
-
-\- \*\*Multi-level Parking Structure\*\*: Manage multiple floors with different spot types
-
-\- \*\*Vehicle Management\*\*: Support for Motorcycles, Cars, SUVs, and Handicapped vehicles
-
-\- \*\*Smart Spot Allocation\*\*: Automatic assignment based on vehicle type
-
-\- \*\*Billing System\*\*: Automated fee calculation with multiple payment options
-
-\- \*\*Fine Management\*\*: Configurable fine schemes for overstaying
-
-\- \*\*Admin Dashboard\*\*: Real-time occupancy, revenue, and reporting
-
-\- \*\*Database Integration\*\*: Persistent data storage
-
-
-
-\## 🛠️ Technologies
-
-
-
-\- \*\*Language:\*\* Java 17+
-
-\- \*\*GUI Framework:\*\* Java Swing
-
-\- \*\*Database:\*\* \[Your chosen database]
-
-\- \*\*Design Patterns:\*\* \[Pattern you chose]
-
-\- \*\*Build Tool:\*\* \[Maven/Gradle if used]
-
-
-
-\## 📐 Design Patterns
-
-
-
-This project implements the \*\*\[Your Pattern]\*\* design pattern to \[explain why].
-
-
-
-\## 🏗️ Architecture
-
-```
-
-src/
-
-├── main/java/com/parkinglot/
-
-│   ├── models/          # Domain entities
-
-│   ├── services/        # Business logic
-
-│   ├── controllers/     # UI controllers
-
-│   ├── views/          # Swing GUI components
-
-│   ├── utils/          # Helper classes
-
-│   └── patterns/       # Design pattern implementations
-
-├── docs/
-
-│   ├── uml/            # UML diagrams
-
-│   └── reports/        # Documentation
-
-└── resources/          # Configuration files
-
-```
-
-
-
-\## 🚀 Getting Started
-
-
-
-\### Prerequisites
-
-\- Java JDK 17 or higher
-
-\- \[Database requirement]
-
-
-
-\### Installation
-
-
-
-1\. Clone the repository:
+### Compilation
 
 ```bash
-
-git clone https://github.com/yourusername/parking-lot-management-system.git
-
+cd src
+javac -d ../bin -cp "../lib/*" models/**/*.java controllers/*.java views/*.java database/*.java Main.java
 ```
 
-
-
-2\. Navigate to project directory:
+### Run
 
 ```bash
-
-cd parking-lot-management-system
-
+cd bin
+java -cp ".;../lib/*" Main
 ```
 
-
-
-3\. Compile and run:
-
-```bash
-
-javac -d bin src/main/java/com/parkinglot/\*.java
-
-java -cp bin com.parkinglot.Main
+## Project Structure
 
 ```
+parking-lot-management-system/
+├── src/
+│   ├── models/
+│   │   ├── parking/      (Member 1: ParkingLot, Floor, Spots)
+│   │   ├── vehicle/      (Member 2: Vehicle hierarchy)
+│   │   ├── payment/      (Member 3: Payment classes)
+│   │   └── fine/         (Member 4: Fine strategies)
+│   ├── controllers/      (All controllers)
+│   ├── views/           (All GUI panels)
+│   ├── database/        (DAO classes)
+│   └── Main.java
+├── docs/                (UML diagrams, documentation)
+├── lib/                 (External libraries)
+└── resources/           (Images, config files)
+```
 
+## Module Responsibilities
 
+### Member 1: Parking Infrastructure (Status: In Progress)
 
-\## 👥 Team Members
+- ✅ ParkingLot class
+- ✅ Floor class
+- ✅ ParkingSpot hierarchy (4 types)
+- ✅ Admin Panel GUI
+- ⏳ Database integration
 
+### Member 2: Vehicle & Entry Management (Status: Pending)
 
+- ⏳ Vehicle hierarchy
+- ⏳ Entry system
+- ⏳ Entry Panel GUI
 
-\- \*\*\[Lama Siam]\*\* - \[Module/Role]
+### Member 3: Exit & Payment (Status: Pending)
 
-\- \*\*\[Eba Ahmed]\*\* - \[Module/Role]
+- ⏳ Payment processing
+- ⏳ Exit system
+- ⏳ Exit Panel GUI
 
-\- \*\*\[Siti Zulaikha ]\*\* - \[Module/Role]
+### Member 4: Fine & Reports (Status: Pending)
 
-\- \*\*\[Hong ]\*\* - \[Module/Role]
+- ⏳ Fine strategies
+- ⏳ Report generation
+- ⏳ Admin reporting GUI
 
+## Design Pattern
 
+**Pattern Used:** Strategy Pattern  
+**Implementation:** Fine calculation system (Member 4)
 
+## Features Implemented
 
-
-\## 📊 UML Diagrams
-
-
-
-All UML diagrams are available in the `docs/uml/` directory:
-
-\- Use Case Diagram
-
-\- Class Diagram
-
-\- Sequence Diagrams
-
-
-
-\## 🎓 Academic Context
-
-
-
-Developed as part of Object-Oriented Analysis and Design course.
-
-
-
-\## 📄 License
-
-
-
-This project is for academic purposes only.
-
+- [ ] Multi-level parking lot structure
+- [ ] Vehicle entry process
+- [ ] Vehicle exit and billing
+- [ ] Fine management
+- [ ] Administrative reports
